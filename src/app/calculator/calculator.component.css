@@ -1,0 +1,40 @@
+* {
+  font-family: "Poppins", sans-serif;
+}
+a {
+  color: hsl(259, 100%, 65%);
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  font-family: "Poppins", sans-serif;
+}
+.form-group label {
+  margin-bottom: 5px;
+}
+input {
+  width: 100px;
+  padding: 10px;
+  font-size: 22px;
+  font-family: "Poppins", sans-serif;
+  border-radius: 5px;
+}
+#anio {
+  width: 130px;
+}
+button {
+  background-color: hsl(259, 100%, 65%);
+  border: none;
+}
+#age-result p {
+  font-family: "Poppins", sans-serif;
+  font-size: 50px;
+  font-style: italic;
+  font-weight: 800;
+}
+#age-result span {
+  color: hsl(259, 100%, 65%);
+}
+#age-result {
+  line-height: 50px;
+}

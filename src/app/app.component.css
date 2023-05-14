@@ -1,0 +1,14 @@
+#contenedor {
+  background-color: hsla(0, 0%, 0%, 0.2);
+}
+.contain {
+  width: 100vw;
+  height: 100vh;
+}
+
+.card {
+  width: 700px;
+  height: 500px;
+  border-bottom-right-radius: 170px;
+  background-color: white;
+}

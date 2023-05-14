@@ -1,0 +1,94 @@
+<section>
+  <!-- 
+    Para cuando empiece el script:
+        - Debajo de cada input:
+            - Si no se pone nada, una alerta de agregar algo.
+            - Si se ingresa una fecha invalida, avisar (La dependencia tal vez tenga el error)
+    -->
+  <nav role="navigation">
+    <div class="col-md-12 d-flex grid gap-3 p-5 pb-3">
+      <div class="form-group">
+        <label for="dia">Day</label>
+        <input
+          class="rounded border border-dark"
+          type="number"
+          name="dia"
+          id="dia"
+          placeholder="DD"
+          min="1"
+          max="31"
+          [(ngModel)]="day"
+          (keyup.enter)="calculate()"
+        />
+        <p class="text-danger p-1" style="font-size: 12px" *ngIf="validate()">
+          Most be a valid day
+        </p>
+      </div>
+
+      <div class="form-group">
+        <label for="mes">Month</label>
+        <input
+          class="rounded border border-dark"
+          type="number"
+          name="mes"
+          id="mes"
+          placeholder="MM"
+          min="1"
+          max="12"
+          [(ngModel)]="month"
+          (keyup.enter)="calculate()"
+        />
+        <p class="text-danger p-1" style="font-size: 12px" *ngIf="validate()">
+          Most be a valid month
+        </p>
+      </div>
+      <div class="form-group">
+        <label for="anio">Year</label>
+        <input
+          class="rounded border border-dark"
+          type="number"
+          name="anio"
+          id="anio"
+          placeholder="YYYY"
+          [(ngModel)]="year"
+          (keyup.enter)="calculate()"
+        />
+        <p class="text-danger p-1" style="font-size: 12px" *ngIf="validate()">
+          Most be a valid year
+        </p>
+      </div>
+    </div>
+  </nav>
+
+  <main role="main">
+    <div class="col-md-12 d-flex justify-content-end pe-5">
+      <button class="p-2 rounded-circle" id="boton" (click)="calculate()">
+        <img src="../../assets/images/icon-arrow.svg" alt="" />
+      </button>
+    </div>
+    <div class="container p-5 pt-4 pb-0 pe-0" id="age-result">
+      <p>
+        <span>{{ edad.anios }}</span> years
+      </p>
+      <p>
+        <span>{{ edad.meses }}</span> months
+      </p>
+      <p>
+        <span>{{ edad.dias }}</span> days
+      </p>
+    </div>
+  </main>
+
+  <!-- <footer role="contentinfo">
+    <div class="attribution text-center">
+      Challenge by
+      <a
+        href="https://www.frontendmentor.io?ref=challenge"
+        target="_blank"
+        class="text-decoration-none"
+        >Frontend Mentor</a
+      >. Coded by
+      <a href="#" target="_blank" class="text-decoration-none">Marcos Leiva</a>.
+    </div>
+  </footer> -->
+</section>
