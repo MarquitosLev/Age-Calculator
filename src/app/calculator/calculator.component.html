@@ -1,16 +1,13 @@
 <section>
-  <!-- 
-    Para cuando empiece el script:
-        - Debajo de cada input:
-            - Si no se pone nada, una alerta de agregar algo.
-            - Si se ingresa una fecha invalida, avisar (La dependencia tal vez tenga el error)
-    -->
   <nav role="navigation">
     <div class="col-md-12 d-flex grid gap-3 p-5 pb-3">
       <div class="form-group">
-        <label for="dia">Day</label>
+        <label for="dia" [ngClass]="{ 'custom-label': validateDay() }"
+          >Day</label
+        >
         <input
-          class="rounded border border-dark"
+          class="rounded"
+          [ngClass]="{ 'custom-border': validateDay() }"
           type="number"
           name="dia"
           id="dia"
@@ -20,15 +17,23 @@
           [(ngModel)]="day"
           (keyup.enter)="calculate()"
         />
-        <p class="text-danger p-1" style="font-size: 12px" *ngIf="validate()">
-          Most be a valid day
-        </p>
+        <!-- Cambiar -->
+        <div
+          class="text-danger p-1"
+          *ngIf="validateDay()"
+          style="font-size: 13px"
+        >
+          Must be a valid day
+        </div>
       </div>
 
       <div class="form-group">
-        <label for="mes">Month</label>
+        <label for="mes" [ngClass]="{ 'custom-label': validateMonth() }"
+          >Month</label
+        >
         <input
-          class="rounded border border-dark"
+          class="rounded"
+          [ngClass]="{ 'custom-border': validateMonth() }"
           type="number"
           name="mes"
           id="mes"
@@ -38,14 +43,22 @@
           [(ngModel)]="month"
           (keyup.enter)="calculate()"
         />
-        <p class="text-danger p-1" style="font-size: 12px" *ngIf="validate()">
-          Most be a valid month
-        </p>
+        <!-- Cambiar -->
+        <div
+          class="text-danger p-1"
+          *ngIf="validateMonth()"
+          style="font-size: 13px"
+        >
+          Must be a valid month
+        </div>
       </div>
       <div class="form-group">
-        <label for="anio">Year</label>
+        <label for="anio" [ngClass]="{ 'custom-label': validateYear() }"
+          >Year</label
+        >
         <input
-          class="rounded border border-dark"
+          class="rounded"
+          [ngClass]="{ 'custom-border': validateYear() }"
           type="number"
           name="anio"
           id="anio"
@@ -53,9 +66,14 @@
           [(ngModel)]="year"
           (keyup.enter)="calculate()"
         />
-        <p class="text-danger p-1" style="font-size: 12px" *ngIf="validate()">
-          Most be a valid year
-        </p>
+        <!-- Cambiar -->
+        <div
+          class="text-danger p-1"
+          *ngIf="validateYear()"
+          style="font-size: 13px"
+        >
+          Must be a valid year
+        </div>
       </div>
     </div>
   </nav>

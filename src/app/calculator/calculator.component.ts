@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { Edad } from '../edad';
-import * as moment from 'moment';
 
 @Component({
   selector: 'app-calculator',
@@ -16,7 +15,12 @@ export class CalculatorComponent {
   constructor() {}
 
   calculate() {
-    this.validate()
+    // Validar primero si lo ingresado es correcto
+    if (!this.validate()) {
+      alert('Error en la fecha');
+      return;
+    }
+
     if (this.day !== null && this.month !== null && this.year !== null) {
       let birthDate = new Date(`${this.year}-${this.month}-${this.day}`);
       let actualAge = Date.now() - birthDate.getTime();
@@ -37,11 +41,42 @@ export class CalculatorComponent {
     };
   }
 
-  validate(){
+  validate(): boolean {
     if (this.day !== null && this.month !== null && this.year !== null) {
-      if(this.day > 31){
-        
+      if (this.day > 31) {
+        return false;
       }
+      if (this.month > 12) {
+        return false;
+      }
+      if (this.year > new Date().getFullYear()) {
+        return false;
+      }
+      return true;
     }
+    return false;
+  }
+
+  validateDay() {
+    // Validar el dia en tiempo real si se ingresa dia valido
+    if (this.day !== null && this.day > 31) {
+      return true;
+    }
+    return false;
+  }
+
+  validateMonth() {
+    // Validar el dia en tiempo real si se ingresa mes valido
+    if (this.month !== null && this.month > 12) {
+      return true;
+    }
+    return false;
+  }
+  validateYear() {
+    // Validar el dia en tiempo real si se ingresa año valido
+    if (this.year !== null && this.year > new Date().getFullYear()) {
+      return true;
+    }
+    return false;
   }
 }

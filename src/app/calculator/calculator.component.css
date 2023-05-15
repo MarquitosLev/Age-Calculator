@@ -13,14 +13,10 @@ a {
   margin-bottom: 5px;
 }
 input {
-  width: 100px;
+  width: 140px;
   padding: 10px;
-  font-size: 22px;
+  font-size: 32px;
   font-family: "Poppins", sans-serif;
-  border-radius: 5px;
-}
-#anio {
-  width: 130px;
 }
 button {
   background-color: hsl(259, 100%, 65%);
@@ -36,5 +32,15 @@ button {
   color: hsl(259, 100%, 65%);
 }
 #age-result {
-  line-height: 50px;
+  line-height: 60px;
 }
+.custom-border {
+  border: 3px solid red;
+}
+.custom-label {
+  color: red;
+}
+
+
+
+
